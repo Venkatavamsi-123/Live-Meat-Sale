@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUTTON Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="product">
+        <img src="go.jpeg" alt="Mutton Type 1">
+        <h2>Sliced Mutton Bone</h2>
+        <p class="price">Price: ₹500/kg</p>
+        <p class="availability">Availability: In Stock</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+
+    <div class="product">
+        <img src="leg.jpeg" alt="Mutton Type 2">
+        <h2>Sliced Mutton leg</h2>
+        <p class="price">Price: ₹600/kg</p>
+        <p class="availability out-of-stock">Availability: Out of Stock</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Add more product divs for additional types of MUTTON -->
+
+    <style>
+        /* Style for "Add to Cart" button */
+        .add-to-cart {
+            background-color: #4CAF50;
+            /* Green background color */
+            color: white;
+            /* White text color */
+            border: none;
+            /* Remove button border */
+            padding: 10px 20px;
+            /* Add padding to button */
+            font-size: 16px;
+            /* Increase font size */
+            cursor: pointer;
+            /* Change cursor to a pointer on hover */
+            outline: none;
+            /* Remove button outline */
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+            /* Darker green color on hover */
+        }
+
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            /* Background color for the entire page */
+        }
+
+        /* Style for product container */
+        .product {
+            width: 300px;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Style for product images */
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style for product titles */
+        .product h2 {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        /* Style for product prices */
+        .price {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Style for product availability */
+        .availability {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Style for out-of-stock items */
+        .out-of-stock {
+            color: #ff0000;
+            /* Red color for out of stock */
+        }
+
+        body {
+            background-image: url('mi.jpg');
+            /* Replace 'background-image.jpg' with the path to your image */
+            background-size: cover;
+            /* This scales the image to cover the entire viewport */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            background-attachment: center;
+            /* Keeps the image fixed in place as you scroll */
+            /* You can also add additional styles here */
+
+        }
+    </style>
+</body>
+
+</html>

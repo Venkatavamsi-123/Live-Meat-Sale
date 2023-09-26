@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Market</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Apply styles to the <body> element to set the background image */
+        body {
+            background-image: url('a.jpg');
+            /* Replace 'background-image.jpg' with the path to your image */
+            background-size: cover;
+            /* This scales the image to cover the entire viewport */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            background-attachment: fixed;
+            /* Keeps the image fixed in place as you scroll */
+            /* You can also add additional styles here */
+        }
+
+        /* Add styles for the rest of your webpage content */
+        c header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #581919;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu-item {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .login-form,
+        .signup-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Reset some default styles */
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Style the taskbar */
+        .taskbar {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .taskbar ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .taskbar ul li {
+            margin: 0 20px;
+        }
+
+        .taskbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Style for login and signup forms (you can customize further) */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Reset some default styles */
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Style the combined navigation bar */
+        .combined-navbar {
+            background-color: #333;
+            color: #9b2121;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .combined-navbar .menu-item {
+            text-decoration: none;
+            color: #9b2121;
+
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .combined-navbar .taskbar {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .combined-navbar .taskbar li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .combined-navbar .taskbar a {
+            text-decoration: none;
+            color: #9b2121;
+
+            font-weight: bold;
+        }
+
+        /* Reset some default styles */
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Styling for the navigation bar */
+        .navbar {
+            background-color: #333;
+            color: #181616;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: #181616;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 20px;
+        }
+
+        /* Styling for the live stream taskbar */
+        .taskbar {
+            background-color: #f44336;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .taskbar ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taskbar ul li {
+            margin: 0 20px;
+        }
+
+        .taskbar a {
+            text-decoration: none;
+            color: #0c0b0b;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Styling for the live stream link */
+        .taskbar a:last-child {
+            background-color: #0c0b0b;
+            color: #f44336;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .taskbar a:last-child:hover {
+            background-color: #f44336;
+            color: #0c0b0b;
+        }
+
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            /* Background color for the entire page */
+        }
+
+        /* Styling for the title */
+        .title-container {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 72px;
+            /* Increase font size for emphasis */
+            font-weight: bold;
+            color: #fff;
+            /* Text color for the title */
+            text-transform: uppercase;
+            /* Convert text to uppercase */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+            /* Adding shadow effect */
+            letter-spacing: 4px;
+            /* Adjust letter spacing for style */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a class="menu-item" href="#">Home</a>
+        <a class="menu-item" href="/chicken.html">Chicken</a>
+        <a class="menu-item" href="/seafood">Seafood</a>
+        <a class="menu-item" href="/mutton.html">Mutton</a>
+        <a class="menu-item" href="/eggs.html">Eggs</a>
+    </nav>
+
+    <nav class="taskbar">
+        <ul>
+
+            <li><a href="/livestream.html">Live Stream</a></li>
+        </ul>
+
+    </nav>
+    <div class="title-container">
+        <h1 class="title">Live Meat Sale</h1>
+    </div>
+    <div id="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+
+</body>
+
+</html>
