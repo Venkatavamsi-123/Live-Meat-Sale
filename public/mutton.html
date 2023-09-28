@@ -14,23 +14,35 @@
         <h2>Sliced Mutton Bone</h2>
         <p class="price">Price: ₹500/kg</p>
         <p class="availability">Availability: In Stock</p>
-        <button class="add-to-cart">Add to Cart</button>
+        <form action="/addedToCart" method="GET">
+            <input type="hidden" name="itemName" value="SlicedMuttonBone">
+            <input type="hidden" name="itemPrice" value="500">
+            <button type="submit">addToCart</button>
+        </form>
     </div>
 
 
     <div class="product">
         <img src="leg.jpeg" alt="Mutton Type 2">
         <h2>Sliced Mutton leg</h2>
-        <p class="price">Price: ₹600-700/kg</p>
+        <p class="price">Price: ₹600/kg</p>
         <p class="availability out-of-stock">Availability: Out of Stock</p>
-        <button class="add-to-cart">Add to Cart</button>
+        <form action="/addedToCart" method="GET">
+            <input type="hidden" name="itemName" value="SlicedMuttonleg">
+            <input type="hidden" name="itemPrice" value="600">
+            <button type="submit">addToCart</button>
+        </form>
     </div>
     <div class="product">
         <img src="go.jpeg" alt="Mutton Type 1">
         <h2>Sliced Mutton Bone</h2>
         <p class="price">Price: ₹500/kg</p>
         <p class="availability">Availability: In Stock</p>
-        <button class="add-to-cart" data-product-id="mutton1">Add to Cart</button>
+        <form action="/addedToCart" method="GET">
+            <input type="hidden" name="itemName" value="SlicedMuttonBone">
+            <input type="hidden" name="itemPrice" value="600">
+            <button type="submit">addToCart</button>
+        </form>
     </div>
 
 

@@ -32,6 +32,65 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// Add an item to the cart
+app.get("/addedToCart", function (req, res) {
+    const itemName = req.query.itemName; // Assuming the item name is passed as a query parameter
+    const itemPrice = parseFloat(req.query.itemPrice); // Assuming the item price is passed as a query parameter
+
+    // Reference to the "cart" document
+
+    // Check if the cart document exists, and if not, create it.
+    const cartRef = db.collection("mutton").doc("cart");
+
+    cartRef.get().then((doc) => {
+        if (!doc.exists) {
+            // Create the cart document if it doesn't exist.
+            return cartRef.set({
+                // Your initial cart data here.
+            });
+        }
+    }).then(() => {
+        // Now, proceed with adding items to the cart and updating the total.
+    }).catch((error) => {
+        console.error("Error checking/creating cart document: ", error);
+    });
+
+
+    // Add the item to the "items" subcollection
+    cartRef.collection("items").add({
+        itemName: itemName,
+        itemPrice: itemPrice,
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    })
+        .then((docRef) => {
+            console.log("Item added to cart with ID: ", docRef.id);
+
+            // Calculate the total cost and update the cart total in Firestore
+            updateCartTotal(cartRef).then(() => {
+                res.send("Item added to cart successfully.");
+            });
+        })
+        .catch((error) => {
+            console.error("Error adding item to cart: ", error);
+            res.status(500).send("Error adding item to cart.");
+        });
+});
+
+// Function to update the cart total in Firestore
+function updateCartTotal(cartRef) {
+    return cartRef.collection("items").get().then((querySnapshot) => {
+        let totalCost = 0;
+        querySnapshot.forEach((doc) => {
+            const itemData = doc.data();
+            totalCost += itemData.itemPrice;
+        });
+
+        // Update the cart total document in Firestore
+        return cartRef.update({
+            totalCost: totalCost,
+        });
+    });
+}
 
 app.get('/signup', function (req, res) {
     res.sendFile(__dirname + "/public/" + "signup.html");
@@ -46,7 +105,7 @@ app.post("/signupSubmit", async function (req, res) {
     }
     try {
         // Check if user already exists
-        const userRef = db.collection('userdemo');
+        const userRef = db.collection('user');
 
         const userDoc = await userRef.where('Email', '==', user.Email).get();
         if (!userDoc.empty) {
@@ -68,11 +127,14 @@ app.post("/signupSubmit", async function (req, res) {
 app.get("/login", function (req, res) {
     res.sendFile(__dirname + "/public/" + "login.html");
 });
+app.get("/addedToCart", function (req, res) {
+
+});
 
 
 app.post('/loginSubmit', async function (req, res) {
     try {
-        const userRef = db.collection('userdemo');
+        const userRef = db.collection('user');
         const querySnapshot = await userRef.where('Email', '==', req.body.Email).get();
 
         if (querySnapshot.empty) {

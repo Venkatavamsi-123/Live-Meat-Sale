@@ -12,7 +12,7 @@
 
         /* Apply styles to the <body> element to set the background image */
         body {
-            background-image: url('a.jpg');
+            background-image: url('am.avif');
             /* Replace 'background-image.jpg' with the path to your image */
             background-size: cover;
             /* This scales the image to cover the entire viewport */
@@ -36,6 +36,7 @@
             color: white;
             text-align: center;
             padding: 10px;
+
         }
 
         .container {
@@ -180,6 +181,7 @@
 
             margin-right: 20px;
             font-weight: bold;
+
         }
 
         .combined-navbar .taskbar {
@@ -292,6 +294,94 @@
             letter-spacing: 4px;
             /* Adjust letter spacing for style */
         }
+
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Styling for the entire page */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('am.avif');
+            /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling for the dashboard */
+        .dashboard {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .dashboard .menu-item {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 20px;
+            transition: color 0.3s;
+        }
+
+        .dashboard .menu-item:hover {
+            color: #9b2121;
+        }
+
+        .dashboard .title-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dashboard .title {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 4px;
+        }
+
+        /* Styling for the navigation bar */
+        .navbar {
+            background-color: #333;
+            color: #181616;
+            text-align: center;
+            padding: 10px 0;
+
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: #181616;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 20px;
+        }
+
+        #logoutButton {
+            position: fixed;
+            top: 10px;
+            /* Adjust the top position as needed */
+            right: 10px;
+            /* Optionally, add a right margin */
+            background-color: #f00;
+            /* Button background color */
+            color: #fff;
+            /* Button text color */
+            padding: 10px 20px;
+            /* Button padding */
+            border: none;
+            /* Remove button border */
+            cursor: pointer;
+            /* Add pointer cursor on hover */
+        }
     </style>
 </head>
 
@@ -315,10 +405,17 @@
     <div class="title-container">
         <h1 class="title">Live Meat Sale</h1>
     </div>
-    <div id="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count">0</span>
-    </div>
+    <a href="/v" onclick="logout()"><button id="logoutButton">Logout</button></a>
+
+    <script>
+        // Add an event listener to the logout button
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            // Perform logout actions here
+            // For example, you can clear a user's session or perform other logout tasks
+            alert('You have been logged out.'); // Example: Show an alert
+            // You can also redirect the user to a logout page or perform an AJAX logout request.
+        });
+    </script>
 
 
 </body>

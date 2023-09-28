@@ -12,9 +12,13 @@
     <div class="product">
         <img src="boneless.webp" alt="Chicken Type 1">
         <h2>BONELESS</h2>
-        <p class="price">Price: ₹200-300/kg</p>
+        <p class="price">Price: ₹200/kg</p>
         <p class="availability">Availability: In Stock</p>
-        <button class="add-to-cart">Add to Cart</button>
+        <form action="/addedToCart" method="GET">
+            <input type="hidden" name="itemName" value="BONELESS">
+            <input type="hidden" name="itemPrice" value="200">
+            <button type="submit">addToCart</button>
+        </form>
     </div>
 
     <div class="product">
@@ -22,7 +26,11 @@
         <h2>CHICKEN CUT</h2>
         <p class="price">Price: ₹180/kg</p>
         <p class="availability out-of-stock">Availability: Out of Stock</p>
-        <button class="add-to-cart">Add to Cart</button>
+        <form action="/addedToCart" method="GET">
+            <input type="hidden" name="itemName" value="CHICKEN CUT">
+            <input type="hidden" name="itemPrice" value="180">
+            <button type="submit">addToCart</button>
+        </form>
     </div>
 </body>
 
